@@ -1,0 +1,44 @@
+Objective:
+Identify key customer segments and develop a data-driven strategy for future promotional messaging & targeting.
+
+Tasks:
+Data preparation:
+After studynig the data dictionary, I decided to create separated tables for each offer status (received, viewed and completed) using Pandas and separated columns for the communication channels, so the viewer could click on slicers, as well as a time table so I could plot time series. I also split original columns to get the reward, offer id, amount, onto specific columns and, within the customers table, generated the age group and income range columns using DAX
+
+Model Building:
+To understand what transactions were related to offers, I created a column with the custoer id + time so i could join the transaction table with the offer_completed table. Following this step, I made all the proper keys connections between tables. Some useful measures were created on this step, like the totals and ratios between measures, and were stored on a separated measure table. Some stats worth mentioning are :
+
+% of amount kept: ([Revenue from offer] - [money spent with rewards] )*100/(revenue from offer)
+
+R/D ratio: Reward/Difficulty ratio. It intends to measure how beneficial an offer would be for a customer, the closer to 0 it is, the more money the customer has to spend for a given reward. It makes more sense when compared between two offers of the same kind.
+
+Visualization:
+After getting the color pallete from the website and AI generating a logo, I separated the offer page and customers page so we could have a good overview on this two big group of content, understading their behaviours and segmentation. In order to connect these two pages without polluting the visual, I decided to implement a pop-up slicer to filter one page using elements from the other. The viewer has buttons to navigate through the report and access pop up infos around it. All tooltips are personalized to match the chosen color scheme. The conclusions were put on a pop up text box as well, so the viewer can read it while still having a grasp of what the board looks like.
+
+Conclusions and Insights :
+
+----- This is taken from the report ------
+
+OFFERS:
+
+*Following page behind, we see on the top chart a very interesting phenomena. The peaks of offers * completion occur in the very hours the offers are sent. It might be a good call to consider an extra reward for a quick acceptance to surf on this trend as well as studying a method such as a remembering notification to create a second peak in the periods between offers.
+
+Using the bottom left slicers, we can see that the offers that were sent using all the 4 methods avaiable performed considerably better than the other ones. One thing to keep in mind is the possibility of sending the offer everywhere having any negative impact on the client.
+
+In the center column we see the numbers of conversions, total amount and the value of the reward given. Discounts were the top two perfoming offers and are also the ones with the best % of amout kept values. Discounts are more attractive for them and for us.
+
+The pie chart shows us that 37% of the total transactions revenue came from offers completion.
+
+On the bottom right box, we can see how the reward/difficulty ratio is not a massive indicator of offer preference as one would think, meaning that we could explore lower reward offers to maximize profits. This becomes quite clear when filtering the left box graphs with the top offers.
+
+CUSTOMERS:
+
+With a grand total of 17 thousand customers, we can see a predominance of the male-indentified ones with almost 60%.**** The data for customer gender analysis was filtered and the customers with only the joining date avaiable, and nothing else, were not considered. Sounds reasonable to me to extrapolate the same profile for the full range of clients.
+
+Taking into consideration the fact that we had a lot of customers who have replied that they are 118 years old, we should consider the age data with caution. Still, we have a clear dominance coming from the 51-70 age group when considering the completion ratio and amount spent.
+
+With this in mind, we still see a lower presence of young people, this might be related to income as they're all located in the lower section of our income range. Maybe studying cheaper alternatives to attract customers with lower income is a way to go from here.
+
+A very intersting fact is how people that became customers in 2016 were much more inclined to complete an offer. Further investigation could show if anything special happened at the time to make the customers more willing to accept offers or maybe even other suggestions from us.
+
+Together with the Income data, we can see that the Male Adult, with a yearly income from 50k to 75k, is the profile that responded the best to this particular offers and rewards set-up. They're the segment to focus on for future similar campaigns.
